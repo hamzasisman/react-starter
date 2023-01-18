@@ -1,7 +1,18 @@
+import { useRef } from "react"
+import profile from "../assets/img/gandalf.jpg"
+import papagan from "../assets/img/ko-logo-papagan.png"
+import logoYatay from "../assets/svg/logo/clickivo-prime-logo-yatay-beyaz.svg"
 function Navbar() {
+
+    const contentRef = useRef()
+    const clickHandle = () => {
+        contentRef.current.classList.toggle('hidden');
+    }
+
     return (
         <div id="navbar" className="sticky top-0 z-20 flex h-[62px] flex-shrink-0 bg-[#1269db] shadow-lg">
-            <button id="menu_mobile" className="ml-4 md:hidden max-sm:z-20" onClick="toggleSidebar();">
+            {/* onClick="toggleSidebar();" */}
+            <button id="menu_mobile" className="ml-4 md:hidden max-sm:z-20">
                 <span className="material-symbols-outlined text-white text-3xl menu-btn">menu</span>
             </button>
             <div className="flex flex-1 justify-between px-4 mx-3">
@@ -25,7 +36,7 @@ function Navbar() {
                     </form>
                     <a href="dashboard.html"
                         className="flex sm:hidden flex-shrink-0 items-center justify-center w-full mb-[3px] max-sm:z-20">
-                        <img className="h-[33px] w-auto" src="assets/svg/logo/clickivo-prime-logo-yatay-beyaz.svg"
+                        <img className="h-[33px] w-auto" src={logoYatay}
                             alt="ClickIVO Prime" />
                     </a>
                 </div>
@@ -36,7 +47,7 @@ function Navbar() {
                 <ul id="nav" className="ml-4 hidden sm:flex items-center max-sm:peer-checked:flex animate-slideIn toggle-content">
                     <li>
                         <div id="task" className="relative group">
-                            <button onClick="toggleInfo(this.parentNode.id);" type="button"
+                            <button onClick={clickHandle} type="button"
                                 className="h-10 w-10 ml-1 rounded-sm hover:bg-[#0F5ABC] focus:bg-[#0F5ABC] flex items-center justify-center text-white relative">
                                 <span className="sr-only">View notifications</span>
                                 <span className="material-symbols-outlined">headset_mic</span>
@@ -47,7 +58,7 @@ function Navbar() {
                                 <p>Görevler</p>
                             </div>
 
-                            <div id="info"
+                            <div id="info" ref={contentRef}
                                 className="info hidden animate-fadeIn absolute right-0 z-10 mt-[10px] w-72 origin-top-right text-[13px] rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none"
                                 role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button" tabIndex="-1">
                                 <p className="px-4 font-bold py-3">Görevler</p>
@@ -56,7 +67,7 @@ function Navbar() {
                                     className="h-64 overflow-y-scroll sm:overflow-y-hidden hover:overflow-y-scroll transition-all duration-300 py-3">
                                     <div className="px-4 flex gap-2" href="">
                                         <div className="w-10 h-10 flex shrink-0">
-                                            <img src="assets/img/ko-logo-papagan.png" width="40" height="40" alt="KO logo" />
+                                            <img src={papagan} width="40" height="40" alt="KO logo" />
                                         </div>
                                         <div>
                                             <p>Yeni görev bilgisini içeriyor</p>
@@ -66,7 +77,7 @@ function Navbar() {
                                     <hr className="my-2" />
                                     <div className="px-4 flex gap-2" href="">
                                         <div className="w-10 h-10 flex shrink-0">
-                                            <img src="assets/img/ko-logo-papagan.png" width="40" height="40" alt="KO logo" />
+                                            <img src={papagan} width="40" height="40" alt="KO logo" />
                                         </div>
                                         <div>
                                             <p>Yeni görev bilgisini içeriyor</p>
@@ -76,7 +87,7 @@ function Navbar() {
                                     <hr className="my-2" />
                                     <div className="px-4 flex gap-2" href="">
                                         <div className="w-10 h-10 flex shrink-0">
-                                            <img src="assets/img/ko-logo-papagan.png" width="40" height="40" alt="KO logo" />
+                                            <img src={papagan} width="40" height="40" alt="KO logo" />
                                         </div>
                                         <div>
                                             <p>Yeni görev bilgisini içeriyor</p>
@@ -86,7 +97,7 @@ function Navbar() {
                                     <hr className="my-2" />
                                     <div className="px-4 flex gap-2" href="">
                                         <div className="w-10 h-10 flex shrink-0">
-                                            <img src="assets/img/ko-logo-papagan.png" width="40" height="40" alt="KO logo" />
+                                            <img src={papagan} width="40" height="40" alt="KO logo" />
                                         </div>
                                         <div>
                                             <p>Yeni görev bilgisini içeriyor</p>
@@ -96,7 +107,7 @@ function Navbar() {
                                     <hr className="my-2" />
                                     <div className="px-4 flex gap-2" href="">
                                         <div className="w-10 h-10 flex shrink-0">
-                                            <img src="assets/img/ko-logo-papagan.png" width="40" height="40" alt="KO logo" />
+                                            <img src={papagan} width="40" height="40" alt="KO logo" />
                                         </div>
                                         <div>
                                             <p>Yeni görev bilgisini içeriyor</p>
@@ -116,7 +127,7 @@ function Navbar() {
                     </li>
                     <li>
                         <div id="request" className="relative group">
-                            <button onClick="toggleInfo(this.parentNode.id);" type="button"
+                            <button onClick={clickHandle} type="button"
                                 className="h-10 w-10 ml-1 rounded-sm hover:bg-[#0F5ABC] focus:bg-[#0F5ABC] flex items-center justify-center text-white relative">
                                 <span className="sr-only">View notifications</span>
                                 <span className="material-symbols-outlined">confirmation_number</span>
@@ -136,7 +147,7 @@ function Navbar() {
                                     className="h-64 overflow-y-scroll sm:overflow-y-hidden hover:overflow-y-scroll transition-all duration-300 py-3">
                                     <div className="px-4 flex gap-2" href="">
                                         <div className="w-10 h-10 flex shrink-0">
-                                            <img src="assets/img/ko-logo-papagan.png" width="40" height="40" alt="KO logo" />
+                                            <img src={papagan} width="40" height="40" alt="KO logo" />
                                         </div>
                                         <div>
                                             <p className="font-bold">Hamza Şişman</p>
@@ -147,7 +158,7 @@ function Navbar() {
                                     <hr className="my-2" />
                                     <div className="px-4 flex gap-2" href="">
                                         <div className="w-10 h-10 flex shrink-0">
-                                            <img src="assets/img/ko-logo-papagan.png" width="40" height="40" alt="KO logo" />
+                                            <img src={papagan} width="40" height="40" alt="KO logo" />
                                         </div>
                                         <div>
                                             <p className="font-bold">Hamza Şişman</p>
@@ -158,7 +169,7 @@ function Navbar() {
                                     <hr className="my-2" />
                                     <div className="px-4 flex gap-2" href="">
                                         <div className="w-10 h-10 flex shrink-0">
-                                            <img src="assets/img/ko-logo-papagan.png" width="40" height="40" alt="KO logo" />
+                                            <img src={papagan} width="40" height="40" alt="KO logo" />
                                         </div>
                                         <div>
                                             <p className="font-bold">Hamza Şişman</p>
@@ -169,7 +180,7 @@ function Navbar() {
                                     <hr className="my-2" />
                                     <div className="px-4 flex gap-2" href="">
                                         <div className="w-10 h-10 flex shrink-0">
-                                            <img src="assets/img/ko-logo-papagan.png" width="40" height="40" alt="KO logo" />
+                                            <img src={papagan} width="40" height="40" alt="KO logo" />
                                         </div>
                                         <div>
                                             <p className="font-bold">Hamza Şişman</p>
@@ -180,7 +191,7 @@ function Navbar() {
                                     <hr className="my-2" />
                                     <div className="px-4 flex gap-2" href="">
                                         <div className="w-10 h-10 flex shrink-0">
-                                            <img src="assets/img/ko-logo-papagan.png" width="40" height="40" alt="KO logo" />
+                                            <img src={papagan} width="40" height="40" alt="KO logo" />
                                         </div>
                                         <div>
                                             <p className="font-bold">Hamza Şişman</p>
@@ -201,7 +212,7 @@ function Navbar() {
                     </li>
                     <li>
                         <div id="reminder" className="relative group">
-                            <button onClick="toggleInfo(this.parentNode.id);" type="button"
+                            <button onClick={clickHandle} type="button"
                                 className="h-10 w-10 ml-1 rounded-sm hover:bg-[#0F5ABC] focus:bg-[#0F5ABC] flex items-center justify-center text-white relative">
                                 <span className="sr-only">View notifications</span>
                                 <span className="material-symbols-outlined">notifications</span>
@@ -228,18 +239,18 @@ function Navbar() {
                     </li>
                     <li>
                         <div id="profile" className="relative ml-3">
-                            <button onClick="toggleInfo(this.parentNode.id);" type="button"
+                            <button onClick={clickHandle} type="button"
                                 className="group flex max-w-xs items-center rounded-full" id="user-menu-button"
                                 aria-expanded="false" aria-haspopup="true">
                                 <span className="sr-only">Open user menu</span>
-                                <img className="h-10 w-10 rounded-full" src="assets/img/gandalf.jpg" alt="Profil" />
+                                <img className="h-10 w-10 rounded-full" src={profile} alt="Profil" />
                             </button>
                             <div id="info"
                                 className="hidden info animate-fadeIn absolute right-0 z-10 mt-[14px] w-72 origin-top-right py-4 text-[13px] rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none"
                                 role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button" tabIndex="-1">
 
                                 <div className="flex px-4">
-                                    <img className="rounded-lg" src="assets/img/gandalf.jpg" width="60" height="60" alt="" />
+                                    <img className="rounded-lg" src={profile} width="60" height="60" alt="" />
                                     <div className="ml-2">
                                         <p className="my-1">Hamza Şişman</p>
                                         <p className="text-[12px] text-[#6c757d] mb-1">email@konusarakogren.com</p>

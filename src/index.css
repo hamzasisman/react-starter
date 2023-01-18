@@ -1,3 +1,270 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer utilities {
+}
+
+@layer components {
+  
+  html {
+      @apply h-full scroll-smooth
+  }
+
+  body {
+      @apply h-full font-quicksand text-base-text bg-[#f9fbfd]
+  }
+
+  .right-login {
+      @apply w-full md:w-1/2 bg-white h-full flex flex-col justify-center items-center mb-2 sm:mb-0
+  }
+
+  .left-login {
+      @apply flex w-full md:w-1/2 bg-gradient-to-tl from-[#06418e] to-blue text-white h-full flex-col justify-center items-center px-10
+  }
+
+  h1,h2,h3,h4,h5 {
+      @apply text-header
+  }
+
+  form {
+      @apply text-[13px]
+  }
+
+  form label {
+      @apply font-bold cursor-pointer
+  }
+
+  .form-input {
+      @apply border-b h-[45px] outline-0 focus:border-b-blue py-3 px-2
+  }
+
+  .form-input-border {
+      @apply border h-[45px] outline-0 focus:border-blue py-3 px-2 rounded mt-1
+  }
+
+  .btn {
+      @apply text-[13px] inline-flex font-normal items-center justify-center leading-6 transition-colors rounded-full py-[15px]
+  }
+
+  .btn-primary {
+      @apply text-white bg-[#007bff] border-[#007bff]
+  }
+
+  .text-section {
+      @apply px-[10px] text-[12px] text-[#727275] font-bold uppercase mb-3 mt-5 w-full
+  }
+
+  .info {
+      @apply before:bg-white before:h-[14px] before:w-[14px] before:absolute before:rotate-45 before:-top-[7px] before:right-[13px]
+  }
+
+  h2 {
+      @apply text-[1.35rem]
+  }
+
+  hr {
+      @apply text-[#0000001a]
+  }
+
+  .toggle-content {
+      @apply max-sm:peer-checked:translate-y-[62px] animate-fadeIn max-sm:absolute max-sm:right-0 max-sm:pr-4 max-sm:w-full bg-[#1269db] max-sm:justify-end max-sm:pb-3 max-sm:shadow-lg
+  }
+
+  .tooltip {
+      @apply hidden group-hover:block absolute animate-fadeIn duration-300 text-center bg-[#222222] text-white text-sm px-2 py-1 rounded z-20 max-w-max -bottom-[36px] right-[-100px] left-[-100px] mx-auto before:absolute before:-top-1 before:right-0 before:left-0 before:mx-auto before:w-[10px] before:h-[10px] before:bg-[#222222] before:rotate-45
+  }
+
+  .tooltip-top {
+      @apply hidden group-hover:block absolute animate-fadeIn duration-300 text-center bg-[#222222] text-white text-sm px-2 py-1 rounded z-20 max-w-max right-[-100px] left-[-100px] mx-auto -top-[38px] after:absolute after:-bottom-1 after:right-0 after:left-0 after:mx-auto after:w-[10px] after:h-[10px] after:bg-[#222222] after:rotate-45
+  }
+
+  .input-field {
+      @apply bg-white border border-[#ebedf2] relative mx-auto h-10 text-start px-4 rounded-full focus:border-blue outline-none
+  }
+
+  .button {
+      @apply bg-white border border-[#ebedf2] px-4 focus:border-blue outline-none rounded-full h-10 flex items-center justify-center
+  }
+
+  .search-button {
+      @apply hover:opacity-90
+  }
+
+  .dropdown {
+      @apply bg-white border border-[#ebedf2] relative w-full md:max-w-[246px] mx-auto h-10 justify-start text-start px-4 rounded-full
+  }
+
+  .dropdow-arrow {
+      @apply transition-transform duration-300 absolute
+  }
+
+  .switch-circle {
+      @apply absolute content-[""] h-5 w-5 left-[26px] top-[2px] bg-white rounded-full duration-500 peer-checked:-translate-x-6
+  }
+
+  #dropdown-menu > ul, #dropdown-menu > ul > li, #dropdown-menu > ul > li > input {
+      @apply w-full
+  }
+
+  .sidebar-buttons {
+      @apply text-[#8d9498] hover:text-header mb-2 hover:bg-gray-100 hover:font-bold focus:text-header focus:bg-gray-100 focus:font-bold flex items-center px-2 py-2 text-[13px] font-medium rounded-md
+  }
+
+  .active-button {
+      @apply font-bold bg-blue text-white shadow-button hover:bg-blue hover:text-white focus:bg-blue focus:text-white
+  }
+
+  table {
+      @apply w-full
+  }
+
+  .th {
+      @apply align-middle py-3 border-b-2 border-[#dee2e6] text-left h-[60px] px-6
+  }
+
+  .th > * {
+      @apply min-w-max
+  }
+
+  .td {
+      @apply px-5 py-2 border-b border-[#ebedf2] bg-white group-hover:bg-[#f0f0f0] align-top
+  }
+
+  .free-lesson {
+      @apply bg-blue text-center align-middle text-white
+  }
+
+  .active-lesson {
+      @apply bg-green text-center align-middle text-white
+  }
+
+  .badge {
+      @apply px-[10px] py-[6px] align-middle text-[11px] border border-[#ddd] rounded-[3px] min-w-[200px]
+  }
+
+  .badge-color {
+      @apply badge text-white text-center min-w-[280px] !max-w-xs uppercase
+  }
+
+  .selectgroup {
+      @apply text-center first:rounded-l-[3px] last:rounded-r-[3px]
+  }
+
+  .selectgroup-button {
+      @apply !w-8 border border-[#0028641f] text-center cursor-pointer text-[#9aa0ac] leading-6 py-1 px-0 inline-block -ml-1 focus:border-blue focus:text-blue focus:bg-[#1572e826]
+  }
+
+  .material-symbols-outlined {
+      @apply cursor-default
+  }
+
+  button > .material-symbols-outlined, a > .material-symbols-outlined {
+      @apply cursor-pointer
+  }
+
+  .label-add-user {
+      @apply w-[100px] sm:w-[125px] text-end font-bold flex flex-shrink-0 justify-end gap-[3px]
+  }
+
+  .button-add-user {
+      @apply w-[480px] text-start
+  }
+  
+  .dropdown-arrow {
+      @apply w-0 h-0 border-4 border-b-0 border-transparent border-t-[#333333] rounded-sm
+  }
+
+  .member-nav-button {
+      @apply font-bold py-4 border-b-[3px] border-transparent hover:text-blue focus:text-blue
+  }
+
+  .member-nav-button-active {
+      @apply text-blue border-blue
+  }
+
+  .gender-btn {
+      @apply w-[38px] !h-[38px] bg-white border rounded-full cursor-pointer flex items-center justify-center focus:border-blue focus:bg-blue/20 focus:text-blue
+  }
+
+  .daterangepicker {
+      @apply z-20
+  }
+
+  .tab-button {
+      @apply hover:bg-card focus:bg-blue focus:text-white
+  }
+
+  .tab-button-active {
+      @apply bg-blue text-white hover:!bg-blue hover:!text-white focus:bg-blue focus:text-white
+  }
+
+  [id^="dropdown_menu"] {
+      @apply max-h-[350px]
+  }
+
+  .package-select-button {
+      @apply w-[40px] sm:w-[50px] h-[40px] sm:h-[50px] rounded-full bg-[#E7E7E7] border-2 border-[#A9A9A9] text-[#808080] font-bold flex items-center relative justify-center
+  }
+  
+  .package-select-button-active{
+      @apply bg-[#7089FA] border-blue text-white
+  }
+
+  .line-between {
+      @apply w-8 h-1 sm:w-1 sm:h-16 bg-[#D3D3D3] absolute max-sm:right-[38px] sm:bottom-[48px]
+  }
+
+  .line-between-active {
+      @apply bg-blue
+  }
+
+  .vertical-line {
+      @apply border-l-2 border-blue h-[118px] mt-[28px]
+  }
+
+  .vertical-line-inner {
+      @apply border-l-2 border-blue h-[92px] mt-[41px]
+  }
+
+  .chevron { 
+  @apply relative text-center mb-[6px] w-[220px] before:chevron-before after:chevron-after
+  }
+
+  .chevron-inner { 
+  @apply relative text-center mb-[6px] w-[175px] before:chevron-before after:chevron-after
+  }
+
+  .chevron-before {
+  @apply content-[''] absolute top-0 left-0 h-full w-1/2 border-t-2 border-blue transform skew-y-[20deg]
+  }
+
+  .chevron-after {
+  @apply content-[''] absolute top-0 right-0 h-full w-1/2 border-t-2 border-blue transform -skew-y-[20deg]
+  }
+
+  .bank-container {
+      @apply w-[137px] h-[47px] flex flex-col items-center justify-center border focus:border-blue cursor-pointer
+  }
+
+  .installment-container {
+      @apply bank-container w-20 h-[60px] focus:bg-[#DCEAFC] text-[#9aa0ac] focus:text-blue gap-2
+  }
+
+  /* Scrollbar Styling */
+  ::-webkit-scrollbar {
+      width: 8px;
+  }
+  
+  ::-webkit-scrollbar-track {
+      background-color: #ebebeb;
+      -webkit-border-radius: 8px;
+      border-radius: 8px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+      -webkit-border-radius: 8px;
+      border-radius: 8px;
+      background: #6d6d6d; 
+  }
+}
